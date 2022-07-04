@@ -5,6 +5,13 @@ function index(req, res) {
   res.render("avengers/index");
 }
 
+function newAvenger(req, res) {
+  console.log("Made it to recruitment form!");
+  console.log(req.body);
+  res.render("avengers/new");
+}
+
 module.exports = {
   index,
+  new: newAvenger,
 };

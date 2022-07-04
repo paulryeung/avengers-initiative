@@ -9,9 +9,13 @@
   <body>
     <div class="container">
       <%- include('../partials/navbar') %>
-      <h1>Avengers Roster</h1>
-
-      <a href="/avengers/new">Recruit New Avenger</a>
+      <form id="avengers-recruitment" action="/flights/new" method="POST">
+        <label>Alias</label>
+        <input type="text" name="alias" /><br />
+        <label>Identity</label>
+        <input type="text" name="identity" /><br />
+        <button type="submit">Submit Application</button>
+      </form>
     </div>
   </body>
 </html>
