@@ -8,7 +8,49 @@ a {
 }
 
 .icon {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.hero-pics {
+  width: 60%;
+  border: 1px solid blue;
+}
+
+.model {
+  width: 95%;
+  object-fit: cover;
+}
+
+.identity-info {
+  width: 40%;
+  border: 1px solid red;
+}
+
+.photo {
+  width: 95%;
+  height: auto;
   object-fit: cover;
 }

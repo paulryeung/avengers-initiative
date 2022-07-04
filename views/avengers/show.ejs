@@ -6,14 +6,43 @@
       <%- include('../partials/navbar') %>
       <div class="profile">
         <div class="profile-header">
-          <div class="header-pics"></div>
-          <div class="header-info"></div>
+          <div class="hero-pics">
+            <img class="model" src="<%=avenger.model%>" />
+          </div>
+          <div class="identity-info">
+            <div class="identity-pic">
+              <img class="photo" src="<%=avenger.photo%>" />
+            </div>
+            <div class="identity-names">
+              <h2>Alias: <%=avenger.alias%></h2>
+              <h2>Identity: <%=avenger.identity%></h2>
+            </div>
+          </div>
         </div>
         <div class="profile-body">
-          <div class="basic info"></div>
-          <div class="abilities"></div>
-          <div class="ultimate"></div>
-          <div class="mission"></div>
+          <div class="description">
+            <h2>Description:</h2>
+            <p><%= avenger.description%></p>
+          </div>
+          <div class="abilities">
+            <h2>Abilities</h2>
+            <ul>
+              <% for (let i=0; i< avenger.abilities.length; i++) { %>
+              <li><%=avenger.abilities[i]%></li>
+              <% }; %>
+            </ul>
+          </div>
+          <div class="ultimate">
+            <h2>Ultimate Move</h2>
+            <h3>Nothing atm</h3>
+          </div>
+          <div class="mission">
+            <h2>Missions Executed</h2>
+            <ul class="missionlist">
+              <li>Mission 1</li>
+              <li>Mission 2</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
