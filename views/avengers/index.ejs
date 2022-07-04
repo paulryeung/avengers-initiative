@@ -11,6 +11,26 @@
       <%- include('../partials/navbar') %>
       <h1>Avengers Roster</h1>
 
+      <table id="avengerslist">
+        <thead>
+          <tr>
+            <th>Icon</th>
+            <th>Avenger</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% avengers.forEach(function (a) { %>
+          <tr>
+            <td><img class="icon" src="<%= a.icon %>" /><%= a.icon %></td>
+            <td><%= a.alias %></td>
+            <td><button>Terminate</button></td>
+          </tr>
+
+          <% }); %>
+        </tbody>
+      </table>
+
       <a href="/avengers/new">Recruit New Avenger</a>
     </div>
   </body>
