@@ -9,6 +9,12 @@ router.get("/new", avengersCtrl.new);
 //posting form information for new Avenger
 router.post("/new", avengersCtrl.add);
 
+//showpage for avenger
+router.get("/:id", avengersCtrl.show);
+
+//route for deleting an avenger
+router.post("/:id/delete", avengersCtrl.delete);
+
 //main index
 router.get("/", avengersCtrl.index);
 

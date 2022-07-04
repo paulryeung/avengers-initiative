@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
+  <%- include('../partials/header') %>
   <body>
     <div class="container">
       <%- include('../partials/navbar') %>
@@ -22,9 +17,23 @@
         <tbody>
           <% avengers.forEach(function (a) { %>
           <tr>
-            <td><img class="icon" src="<%= a.icon %>" /><%= a.icon %></td>
-            <td><%= a.alias %></td>
-            <td><button>Terminate</button></td>
+            <td>
+              <a href="/avengers/<%=a._id%>">
+                <img class="icon" src="<%= a.icon %>" />
+              </a>
+            </td>
+            <td>
+              <a href="/avengers/<%=a._id%>"> <%= a.alias %> </a>
+            </td>
+            <td>
+              <form
+                id="deleteavenger"
+                action="/avengers/<%=a._id%>/delete"
+                method="POST"
+              >
+                <button type="submit">Delete</button>
+              </form>
+            </td>
           </tr>
 
           <% }); %>
