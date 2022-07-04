@@ -14,8 +14,16 @@ const avengerSchema = new Schema({
   identity: { type: String, default: "Unknown Identity" },
   description: { type: String, default: "No Data Available" },
   icon: { type: String, default: "Photo Unavailable" },
-  model: { type: String, default: "Photo Unavailable" },
-  photo: { type: String, default: "Photo Unavailable" },
+  model: {
+    type: String,
+    default:
+      "https://www.clarksvilleonline.com/wp-content/uploads/2013/05/Photo-Unavailable.jpg",
+  },
+  photo: {
+    type: String,
+    default:
+      "https://www.clarksvilleonline.com/wp-content/uploads/2013/05/Photo-Unavailable.jpg",
+  },
   abilities: { type: [String], default: ["Unknown Abilities"] },
   ultimate: [ultimateSchema],
 });
