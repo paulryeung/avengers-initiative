@@ -10,12 +10,12 @@ const ultimateSchema = new Schema({
 
 //will add missions later
 const avengerSchema = new Schema({
-  alias: String,
-  identity: String,
-  description: String,
-  icon: String,
-  photo: String,
-  abilities: [],
+  alias: { type: String, default: "Unknown Name" },
+  identity: { type: String, default: "Unknown Identity" },
+  description: { type: String, default: "No Data Available" },
+  icon: { type: String, default: "Photo Unavailable" },
+  photo: { type: String, default: "Photo Unavailable" },
+  abilities: { type: [String], default: ["Unknown Abilities"] },
   ultimate: [ultimateSchema],
 });
 

@@ -9,11 +9,21 @@
   <body>
     <div class="container">
       <%- include('../partials/navbar') %>
-      <form id="avengers-recruitment" action="/flights/new" method="POST">
+      <form id="avengers-recruitment" action="/avengers/new" method="POST">
         <label>Alias</label>
         <input type="text" name="alias" /><br />
         <label>Identity</label>
         <input type="text" name="identity" /><br />
+        <label>Description</label>
+        <input type="text" name="description" /><br />
+        <label>Icon (Link To Image)</label>
+        <input type="text" name="icon" /><br />
+        <label>Photo ID (Link To Image)</label>
+        <input type="text" name="photo" /><br />
+        <label>Abilities</label>
+        <input type="text" name="abilities" /><br />
+        <label>Ultimate Move</label>
+        <input type="text" name="ultimate" /><br />
         <button type="submit">Submit Application</button>
       </form>
     </div>
