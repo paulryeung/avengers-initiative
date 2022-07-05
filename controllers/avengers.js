@@ -13,6 +13,7 @@ function newAvenger(req, res) {
   res.render("avengers/new");
 }
 
+//adding new avenger
 function add(req, res) {
   console.log("Here are form parameters", req.body);
 
@@ -44,6 +45,8 @@ function show(req, res) {
     res.render("avengers/show", { avenger });
   });
 }
+
+//adding avenger to a mission
 
 module.exports = {
   index,

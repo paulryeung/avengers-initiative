@@ -46,7 +46,10 @@ function deleteMission(req, res) {
 //Show Mission Page
 function show(req, res) {
   Mission.findById(req.params.id, function (err, mission) {
-    res.render("missions/show", { mission });
+    //grab all the avengers too and pass it
+    Avenger.find({}, function (err, avengers) {
+      res.render("missions/show", { mission, avengers });
+    });
   });
 }
 
