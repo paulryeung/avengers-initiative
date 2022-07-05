@@ -49,7 +49,7 @@ function show(req, res) {
     .populate("team")
     .exec(function (err, mission) {
       //grab all the avengers too and pass it
-      Avenger.find({ _id: { $nin: Mission.team } }).exec(function (
+      Avenger.find({ _id: { $nin: mission.team } }).exec(function (
         err,
         avengers
       ) {
@@ -110,6 +110,31 @@ function addToTeam(req, res) {
   });
 }
 
+//Remove Avenger from Team
+function removeFromTeam(req, res) {
+  console.log("made it to removing member from team");
+  console.log(
+    "mission ID: ",
+    req.params.id,
+    "avenger id: ",
+    req.params.avengerid
+  );
+
+  //find correct mission and splice out the Team Array
+  Mission.findById(req.params.id, function (err, mission) {
+    //find index of avenger
+    let idx = mission.team.findIndex(
+      (avenger) => avenger._id == req.params.avengerid
+    );
+
+    mission.team.splice(idx, 1);
+    //now save the updated mission in database
+    mission.save(function (err) {
+      res.redirect(`/missions/${req.params.id}`);
+    });
+  });
+}
+
 module.exports = {
   index,
   new: newMission,
@@ -119,4 +144,5 @@ module.exports = {
   show,
   edit,
   update,
+  removeFromTeam,
 };

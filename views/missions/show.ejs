@@ -16,28 +16,42 @@
       <h2>Location: <span><%= mission.location%></span></h2>
       <br />
       <br />
-      <h2>Available Avengers:</h2>
+      <h2>Available Avengers</h2>
 
-      <!--adding avengers to cast-->
-      <form
-        id="add-avenger-to-mission"
-        action="/missions/<%=mission._id%>/avengers"
-        method="POST"
-      >
-        <select name="avengerId">
-          <%- avengers.map (a => `
-          <option value="${a._id}">${a.alias}</option>
-          `).join('') %>
-        </select>
-        <button type="submit">Assign Avenger</button>
-      </form>
+      <div class="available-avengers">
+        <!--adding avengers to cast-->
+        <form
+          id="add-avenger-to-mission"
+          action="/missions/<%=mission._id%>/avengers"
+          method="POST"
+        >
+          <select name="avengerId">
+            <%- avengers.map (a => `
+            <option value="${a._id}">${a.alias}</option>
+            `).join('') %>
+          </select>
+          <button type="submit">Assign Avenger</button>
+        </form>
+      </div>
       <h2>Current Team</h2>
-      <ul>
+
+      <div class="current-team">
         <% mission.team.forEach(function (member) { %>
-        <li><%=member.alias%></li>
+        <form
+          id="remove-avenger-from-mission"
+          action="/missions/<%=mission._id%>/avengers/<%=member._id%>?_method=DELETE"
+          method="POST"
+        >
+          <input
+            type="image"
+            class="delete-icon"
+            alt="submit"
+            src="<%=member.icon%>"
+          />
+        </form>
 
         <% }); %>
-      </ul>
+      </div>
     </div>
   </body>
 </html>

@@ -24,6 +24,9 @@ router.put("/:id", missionsCtrl.update);
 //add avenger to missions
 router.post("/:id/avengers", missionsCtrl.addToTeam);
 
+//remove avenger from mission
+router.delete("/:id/avengers/:avengerid", missionsCtrl.removeFromTeam);
+
 //show mission briefing page
 router.get("/:id", missionsCtrl.show);
 

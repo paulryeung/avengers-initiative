@@ -17,6 +17,10 @@ function newAvenger(req, res) {
 function add(req, res) {
   console.log("Here are form parameters", req.body);
 
+  //seperate abilities by comma into array elements
+  req.body.abilities = req.body.abilities.split(",");
+  console.log("Here are form parameters after split", req.body);
+
   let newAvenger = Avenger(req.body);
   newAvenger.save(function (err) {
     if (err) {
@@ -56,6 +60,7 @@ function edit(req, res) {
   });
 }
 
+//Update an avenger
 function update(req, res) {
   console.log("Made it to updating avenger controller");
   console.log(req.body);
