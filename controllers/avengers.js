@@ -46,6 +46,16 @@ function show(req, res) {
   });
 }
 
+//edit an avenger page, but also need to pass missions [TO BE UPDATED LATER]
+function edit(req, res) {
+  console.log("Made it to edit avengers controller");
+
+  Avenger.findById(req.params.id, function (err, avenger) {
+    console.log(avenger);
+    res.render("avengers/edit", { avenger });
+  });
+}
+
 //adding avenger to a mission
 
 module.exports = {
@@ -54,4 +64,5 @@ module.exports = {
   add,
   delete: deleteAvenger,
   show,
+  edit,
 };

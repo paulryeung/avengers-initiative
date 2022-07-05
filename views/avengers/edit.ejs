@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/header') %>
+  <body>
+    <div class="container">
+      <%- include('../partials/navbar') %>
+      <form
+        id="avengers-recruitment"
+        action="/avengers/<%=avenger._id%>?_method=PUT"
+        method="POST"
+      >
+        <label>Alias</label>
+        <input type="text" name="alias" value="<%=avenger.alias%>" /><br />
+        <label>Identity</label>
+        <input
+          type="text"
+          name="identity"
+          value="<%=avenger.identity%>"
+        /><br />
+        <label>Description</label>
+        <input
+          type="text"
+          name="description"
+          value="<%=avenger.description%>"
+        /><br />
+        <label>Icon (Link To Image)</label>
+        <input type="text" name="icon" value="<%=avenger.icon%>" /><br />
+        <label>Hero Portrait (Link To Image)</label>
+        <input type="text" name="model" value="<%=avenger.model%>" /><br />
+        <label>Photo ID (Link To Image)</label>
+        <input type="text" name="photo" value="<%=avenger.photo%>" /><br />
+        <label>Abilities</label>
+        <input
+          type="text"
+          name="abilities"
+          value="<%=avenger.abilities%>"
+        /><br />
+        <label>Ultimate Move (form coming soon)</label>
+
+        <button type="submit">Submit Application</button>
+      </form>
+    </div>
+  </body>
+</html>
