@@ -12,4 +12,7 @@ router.get("/new", missionsCtrl.new);
 //post mission form information
 router.post("/new", missionsCtrl.add);
 
+//delete a mission
+router.post("/:id/delete", missionsCtrl.delete);
+
 module.exports = router;
