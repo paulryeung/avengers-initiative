@@ -87,7 +87,7 @@ function update(req, res) {
       console.log("Error updating mission, redirecting now to page again");
       return res.redirect(`/missions/${req.params.id}/edit`);
     }
-    res.redirect("/missions");
+    res.redirect(`/missions/${req.params.id}`);
   });
 }
 

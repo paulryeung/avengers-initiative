@@ -18,6 +18,9 @@ router.get("/:id/edit", avengersCtrl.edit);
 //showpage for avenger
 router.get("/:id", avengersCtrl.show);
 
+//update the avenger profile
+router.put("/:id", avengersCtrl.update);
+
 //main index
 router.get("/", avengersCtrl.index);
 

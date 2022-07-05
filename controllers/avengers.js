@@ -56,6 +56,20 @@ function edit(req, res) {
   });
 }
 
+function update(req, res) {
+  console.log("Made it to updating avenger controller");
+  console.log(req.body);
+
+  Avenger.updateOne({ _id: req.params.id }, req.body, function (err) {
+    if (err) {
+      console.log(err);
+      console.log("Error updating avenger, redirecting to edit page again");
+      return res.redirect(`/avengers/${req.params.id}/edit`);
+    }
+    res.redirect(`/avengers/${req.params.id}`);
+  });
+}
+
 //adding avenger to a mission
 
 module.exports = {
@@ -65,4 +79,5 @@ module.exports = {
   delete: deleteAvenger,
   show,
   edit,
+  update,
 };
