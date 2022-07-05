@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/header') %>
+  <body>
+    <div class="container">
+      <%- include('../partials/navbar') %>
+      <h1>Mission Dispatch</h1>
+      <form id="mission-dispatch" action="/missions/new" method="POST">
+        <label>Codename: </label>
+        <input type="text" name="codename" /><br />
+        <label>Objective</label>
+        <input type="text" name="objective" /><br />
+        <label>Location</label>
+        <input type="text" name="location" /><br />
+        <label>Available Avengers: </label>
+        <label>Team: </label>
+      </form>
+    </div>
+  </body>
+</html>
