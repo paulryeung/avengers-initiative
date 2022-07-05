@@ -15,10 +15,16 @@ router.post("/new", missionsCtrl.add);
 //delete a mission
 router.post("/:id/delete", missionsCtrl.delete);
 
-//show mission briefing page
-router.get("/:id", missionsCtrl.show);
+//edit a mission page
+router.get("/:id/edit", missionsCtrl.edit);
+
+//updating the mission with form
+router.put("/:id", missionsCtrl.update);
 
 //add avenger to missions
 router.post("/:id/avengers", missionsCtrl.addToTeam);
+
+//show mission briefing page
+router.get("/:id", missionsCtrl.show);
 
 module.exports = router;

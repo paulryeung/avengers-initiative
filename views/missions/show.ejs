@@ -5,6 +5,10 @@
     <div class="container">
       <%- include('../partials/navbar') %>
       <h1>Mission Briefing</h1>
+      <a href="/missions/<%= mission._id %>/edit">
+        <button>Update Mission</button>
+      </a>
+
       <h2>Operation: <span><%= mission.operation%></span></h2>
       <br />
       <h2>Objective: <span><%= mission.objective%></span></h2>
@@ -17,7 +21,7 @@
       <!--adding avengers to cast-->
       <form
         id="add-avenger-to-mission"
-        action="/mission/<%=mission._id%>/avengers"
+        action="/missions/<%=mission._id%>/avengers"
         method="POST"
       >
         <select name="avengerId">
@@ -27,6 +31,13 @@
         </select>
         <button type="submit">Assign Avenger</button>
       </form>
+      <h2>Current Team</h2>
+      <ul>
+        <% mission.team.forEach(function (member) { %>
+        <li><%=member.alias%></li>
+
+        <% }); %>
+      </ul>
     </div>
   </body>
 </html>

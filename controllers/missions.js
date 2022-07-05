@@ -45,21 +45,68 @@ function deleteMission(req, res) {
 
 //Show Mission Page
 function show(req, res) {
-  Mission.findById(req.params.id, function (err, mission) {
-    //grab all the avengers too and pass it
-    Avenger.find({}, function (err, avengers) {
-      res.render("missions/show", { mission, avengers });
+  Mission.findById(req.params.id)
+    .populate("team")
+    .exec(function (err, mission) {
+      //grab all the avengers too and pass it
+      Avenger.find({ _id: { $nin: Mission.team } }).exec(function (
+        err,
+        avengers
+      ) {
+        console.log(avengers);
+        res.render("missions/show", { mission, avengers });
+      });
     });
+}
+
+//Edit a Mission page
+function edit(req, res) {
+  //basically the same as show page, need to pass mission and avengers
+  Mission.findById(req.params.id)
+    .populate("team")
+    .exec(function (err, mission) {
+      //grab all the avengers too and pass it
+      Avenger.find({ _id: { $nin: Mission.team } }).exec(function (
+        err,
+        avengers
+      ) {
+        console.log(avengers);
+        res.render("missions/edit", { mission, avengers });
+      });
+    });
+}
+
+//Update a Mission Page
+function update(req, res) {
+  console.log("made it to mission update");
+  console.log(req.body);
+
+  Mission.updateOne({ _id: req.params.id }, req.body, function (err) {
+    if (err) {
+      console.log(err);
+      console.log("Error updating mission, redirecting now to page again");
+      return res.redirect(`/missions/${req.params.id}/edit`);
+    }
+    res.redirect("/missions");
   });
 }
 
 //Add Avenger to Team
 function addToTeam(req, res) {
   console.log("Adding avenger to mission team");
+  console.log(req.body);
   //find the correct mission and push avenger id into team parameter
   Mission.findById(req.params.id, function (err, mission) {
     //push avengers id into team
-    //mission.team.push(req.body.avengerId);
+    mission.team.push(req.body.avengerId);
+
+    //save the mission with the push
+    mission.save(function (err) {
+      if (err) {
+        console.log("Error message: ", err);
+      }
+      res.redirect(`/missions/${req.params.id}`);
+    });
   });
 }
 
@@ -70,4 +117,6 @@ module.exports = {
   delete: deleteMission,
   addToTeam,
   show,
+  edit,
+  update,
 };
