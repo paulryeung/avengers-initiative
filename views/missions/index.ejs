@@ -20,7 +20,16 @@
             <td>
               <a href="/missions/<%=m._id%>"><%= m.operation %></a>
             </td>
-            <td></td>
+            <td>
+              <!--Display all team member icons in row-->
+              <div class="current-team">
+                <% m.team.forEach(function (member) { %>
+
+                <img class="team-icon" src="<%=member.icon%>" />
+
+                <% }); %>
+              </div>
+            </td>
             <td>
               <form
                 id="deletemission"

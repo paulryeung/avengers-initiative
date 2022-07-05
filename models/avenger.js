@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
-
+const { SchemaTypes } = require("mongoose");
 const Schema = mongoose.Schema;
-
+/*
 const ultimateSchema = new Schema({
   moveName: String,
   gif: String,
   moveDescription: String,
 });
-
+*/
 //will add missions later
 const avengerSchema = new Schema({
   alias: { type: String, default: "Unknown Name" },
@@ -25,7 +25,7 @@ const avengerSchema = new Schema({
       "https://www.clarksvilleonline.com/wp-content/uploads/2013/05/Photo-Unavailable.jpg",
   },
   abilities: { type: [String], default: ["Unknown Abilities"] },
-  ultimate: [ultimateSchema],
+  missions: [{ type: SchemaTypes.ObjectId, ref: "Missions" }],
 });
 
 module.exports = mongoose.model("Avengers", avengerSchema);

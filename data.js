@@ -86,9 +86,9 @@ exports.avengers = [
     description:
       "The King of Wakanda that wears a vibrinium suit with integrated cutting edge technology. He is an expert inventor, tactician, and strategist that's well trained in expert hand-to-hand combat ",
     icon: "https://m.media-amazon.com/images/I/6152-G73wCL._AC_SL1202_.jpg",
-    model:
-      "https://i.pinimg.com/736x/ef/29/eb/ef29ebf94a909d0756fdd590e2f61574.jpg",
-    photo: "https://mfiles.alphacoders.com/710/710575.jpg",
+    model: "https://mfiles.alphacoders.com/710/710575.jpg",
+    photo:
+      "https://www.pinkvilla.com/files/styles/ld-image/public/chadwick.jpg",
     abilities: [
       "Superhuman strength, durabilitiy, speed, and stamina",
       "Power to Draw Intellect, Strength, and Memories of Previous Black Panthers",

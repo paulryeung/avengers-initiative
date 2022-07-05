@@ -4,9 +4,11 @@ const Avenger = require("../models/avenger");
 //Index of Missions
 function index(req, res) {
   console.log("Made it here to missions index controller");
-  Mission.find({}, function (err, missions) {
-    res.render("missions/index", { missions });
-  });
+  Mission.find({})
+    .populate("team")
+    .exec(function (err, missions) {
+      res.render("missions/index", { missions });
+    });
 }
 
 //New mission form page
