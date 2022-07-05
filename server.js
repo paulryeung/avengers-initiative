@@ -26,6 +26,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+//can use static images and method override
+app.use(express.static("public"));
 app.use(methodOverride("_method"));
 
 app.use("/", indexRouter);

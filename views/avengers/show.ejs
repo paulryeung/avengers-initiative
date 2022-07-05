@@ -4,12 +4,12 @@
   <body>
     <div class="container">
       <%- include('../partials/navbar') %>
-      <div class="profile">
+      <div class="content">
         <div class="profile-header">
-          <div class="hero-pics">
+          <div class="model-div">
             <img class="model" src="<%=avenger.model%>" />
           </div>
-          <div class="identity-info">
+          <div class="identity-div">
             <div class="identity-pic">
               <img class="photo" src="<%=avenger.photo%>" />
               <a href="/avengers/<%=avenger._id%>/edit">Update Profile</a>
@@ -17,23 +17,22 @@
             <div class="identity-names">
               <h2>Alias: <%=avenger.alias%></h2>
               <h2>Identity: <%=avenger.identity%></h2>
+              <div class="description">
+                <h2>Description:</h2>
+                <p><%= avenger.description%></p>
+              </div>
+              <div class="abilities">
+                <h2>Abilities</h2>
+                <ul class="ul-abilities">
+                  <% for (let i=0; i< avenger.abilities.length; i++) { %>
+                  <li><%=avenger.abilities[i]%></li>
+                  <% }; %>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
         <div class="profile-body">
-          <div class="description">
-            <h2>Description:</h2>
-            <p><%= avenger.description%></p>
-          </div>
-          <div class="abilities">
-            <h2>Abilities</h2>
-            <ul>
-              <% for (let i=0; i< avenger.abilities.length; i++) { %>
-              <li><%=avenger.abilities[i]%></li>
-              <% }; %>
-            </ul>
-          </div>
-
           <div class="mission">
             <h2>Missions Assigned</h2>
             <ul class="missionlist">

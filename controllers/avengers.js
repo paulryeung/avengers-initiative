@@ -75,6 +75,9 @@ function update(req, res) {
   console.log("Made it to updating avenger controller");
   console.log(req.body);
 
+  //make sure abilities is properly spliced
+  req.body.abilities = req.body.abilities.split(",");
+
   Avenger.updateOne({ _id: req.params.id }, req.body, function (err) {
     if (err) {
       console.log(err);

@@ -1,37 +1,68 @@
+/*General All Page Default Styling*/
+
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+  background-color: #c9cff3;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*
+  background-image: url("/images/avengers_back.jpg");
+  background-repeat: no-repeat;
+  background-color: #cccccc; */
 }
 
 a {
   color: #00b7ff;
 }
 
+img {
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+}
+
+/* Navigation Bar Styling here*/
+.navbar {
+  height: 50px;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #314ff5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+nav > a {
+  color: white;
+  margin: 20px;
+  font-size: 20px;
+}
+
+/* AVENGERS INDEX STYLING HERE*/
 .icon {
   width: 80px;
   height: 80px;
   object-fit: contain;
 }
 
-.team-icon {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
-.container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.profile {
+/* AVENGERS PROFILE SHOW PAGE STYLING HERE*/
+.content {
   width: 50%;
+  min-width: 750px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
+  border: 5px solid blue;
+  border-radius: 20px;
 }
 
 .profile-header {
@@ -40,25 +71,53 @@ a {
   justify-content: space-between;
 }
 
-.hero-pics {
-  width: 60%;
+.model-div {
+  max-width: 450px;
+  max-height: 700px;
   border: 1px solid blue;
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .model {
-  width: 95%;
+  width: 100%;
+  max-height: auto;
+  margin-left: auto;
+  margin-right: auto;
   object-fit: cover;
 }
 
-.identity-info {
+.identity-div {
+  max-width: 300px;
+  max-height: 700px;
+  margin: 5px;
   width: 40%;
   border: 1px solid red;
+  display: flex;
+  flex-direction: column;
 }
 
 .photo {
-  width: 95%;
-  height: auto;
+  width: 100%;
+  height: 300px;
   object-fit: cover;
+}
+
+/*MISSIONS INDEX STYLING HERE*/
+
+.team-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/*MISSIONS SHOW PAGE STYLING HERE*/
+
+.current-team {
+  display: flex;
+  flex-direction: row;
 }
 
 .add-delete-icon {
@@ -69,11 +128,6 @@ a {
 }
 
 .available-avengers {
-  display: flex;
-  flex-direction: row;
-}
-
-.current-team {
   display: flex;
   flex-direction: row;
 }
