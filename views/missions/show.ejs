@@ -20,18 +20,21 @@
 
       <div class="available-avengers">
         <!--adding avengers to cast-->
+        <% avengers.forEach(function (member) { %>
         <form
           id="add-avenger-to-mission"
-          action="/missions/<%=mission._id%>/avengers"
+          action="/missions/<%=mission._id%>/avengers/<%=member._id%>"
           method="POST"
         >
-          <select name="avengerId">
-            <%- avengers.map (a => `
-            <option value="${a._id}">${a.alias}</option>
-            `).join('') %>
-          </select>
-          <button type="submit">Assign Avenger</button>
+          <input
+            type="image"
+            class="add-delete-icon"
+            alt="submit"
+            src="<%=member.icon%>"
+          />
         </form>
+
+        <% }); %>
       </div>
       <h2>Current Team</h2>
 
@@ -44,7 +47,7 @@
         >
           <input
             type="image"
-            class="delete-icon"
+            class="add-delete-icon"
             alt="submit"
             src="<%=member.icon%>"
           />

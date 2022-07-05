@@ -1,0 +1,12 @@
+<form
+  id="add-avenger-to-mission"
+  action="/missions/<%=mission._id%>/avengers"
+  method="POST"
+>
+  <select name="avengerId">
+    <%- avengers.map (a => `
+    <option value="${a._id}">${a.alias}</option>
+    `).join('') %>
+  </select>
+  <button type="submit">Assign Avenger</button>
+</form>

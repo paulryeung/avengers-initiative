@@ -98,7 +98,7 @@ function addToTeam(req, res) {
   //find the correct mission and push avenger id into team parameter
   Mission.findById(req.params.id, function (err, mission) {
     //push avengers id into team
-    mission.team.push(req.body.avengerId);
+    mission.team.push(req.params.avengerid);
 
     //save the mission with the push
     mission.save(function (err) {

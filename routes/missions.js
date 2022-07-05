@@ -22,7 +22,7 @@ router.get("/:id/edit", missionsCtrl.edit);
 router.put("/:id", missionsCtrl.update);
 
 //add avenger to missions
-router.post("/:id/avengers", missionsCtrl.addToTeam);
+router.post("/:id/avengers/:avengerid", missionsCtrl.addToTeam);
 
 //remove avenger from mission
 router.delete("/:id/avengers/:avengerid", missionsCtrl.removeFromTeam);

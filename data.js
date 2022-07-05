@@ -47,6 +47,55 @@ exports.avengers = [
       "Electricity Manipulation",
     ],
   },
+  {
+    alias: "Hulk",
+    identity: "Bruce Banner",
+    description:
+      "Doctor and Scientist that can transform into a large green giant upon anger",
+    icon: "https://www.popsockets.com/dw/image/v2/BFSM_PRD/on/demandware.static/-/Sites-popsockets-master-catalog/default/dwd199a18f/images/hi-res/Hulk-Gloss_01_Top-View.png",
+    model:
+      "https://w0.peakpx.com/wallpaper/19/205/HD-wallpaper-hulk-the-beast-avengers-endgame-marvel-powerful-superhero.jpg",
+    photo:
+      "https://www.firstpost.com/wp-content/uploads/2019/04/mark-ruffalo-825.jpg",
+    abilities: [
+      "Immense Superhuman strength, durabilitiy, speed, and stamina",
+      "Genius Level Intellect",
+      "Invulnerability and Regeneration",
+    ],
+  },
+  {
+    alias: "Scarlett Witch",
+    identity: "Wanda Maximoff",
+    description:
+      "Sokovia native with incredibly powerful abilities to manipulate Chaos Magic.",
+    icon: "https://i.pinimg.com/736x/91/38/ef/9138ef652b540ae4f91fe8962558befe.jpg",
+    model:
+      "https://i.pinimg.com/736x/ef/29/eb/ef29ebf94a909d0756fdd590e2f61574.jpg",
+    photo:
+      "https://i.pinimg.com/originals/a2/f4/f4/a2f4f48116327eba0368ec0ea12d72f1.jpg",
+    abilities: [
+      "Flight",
+      "Astral Projection",
+      "Chaos Magic and Energy Control",
+      "Reality Manipulation",
+    ],
+  },
+  {
+    alias: "Black Panther",
+    identity: "T'Challa",
+    description:
+      "The King of Wakanda that wears a vibrinium suit with integrated cutting edge technology. He is an expert inventor, tactician, and strategist that's well trained in expert hand-to-hand combat ",
+    icon: "https://m.media-amazon.com/images/I/6152-G73wCL._AC_SL1202_.jpg",
+    model:
+      "https://i.pinimg.com/736x/ef/29/eb/ef29ebf94a909d0756fdd590e2f61574.jpg",
+    photo: "https://mfiles.alphacoders.com/710/710575.jpg",
+    abilities: [
+      "Superhuman strength, durabilitiy, speed, and stamina",
+      "Power to Draw Intellect, Strength, and Memories of Previous Black Panthers",
+      "Expert Level Hand-To-Hand Combat",
+      "Energy Manipulation Technology using Vibranium Suit",
+    ],
+  },
 ];
 
 exports.missions = [
