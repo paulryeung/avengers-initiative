@@ -48,3 +48,21 @@ exports.avengers = [
     ],
   },
 ];
+
+exports.missions = [
+  {
+    operation: "Hailing On Hydra",
+    objective: "Infiltrate and Destroy Hydra Research Base",
+    location: "Sokovia",
+  },
+  {
+    operation: "Ragnarok",
+    objective: "Defend Asgard from Hela and her Minions",
+    location: "Asgard",
+  },
+  {
+    operation: "Malware Removal",
+    objective: "Destroy Ultron, his Sentries and production facilities",
+    location: "Eastern Europe",
+  },
+];
