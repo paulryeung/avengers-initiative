@@ -1,4 +1,5 @@
 const Mission = require("../models/mission");
+const Avenger = require("../models/avenger");
 
 //Index of Missions
 function index(req, res) {
@@ -42,9 +43,28 @@ function deleteMission(req, res) {
   });
 }
 
+//Show Mission Page
+function show(req, res) {
+  Mission.findById(req.params.id, function (err, mission) {
+    res.render("missions/show", { mission });
+  });
+}
+
+//Add Avenger to Team
+function addToTeam(req, res) {
+  console.log("Adding avenger to mission team");
+  //find the correct mission and push avenger id into team parameter
+  Mission.findById(req.params.id, function (err, mission) {
+    //push avengers id into team
+    //mission.team.push(req.body.avengerId);
+  });
+}
+
 module.exports = {
   index,
   new: newMission,
   add,
   delete: deleteMission,
+  addToTeam,
+  show,
 };
