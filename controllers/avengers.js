@@ -1,4 +1,5 @@
 const Avenger = require("../models/avenger");
+const Mission = require("../models/mission");
 
 //main list of avengers page
 function index(req, res) {
@@ -46,7 +47,16 @@ function deleteAvenger(req, res) {
 function show(req, res) {
   Avenger.findById(req.params.id, function (err, avenger) {
     console.log(avenger);
-    res.render("avengers/show", { avenger });
+
+    //Query for array of all missions that has this avengers id
+    Mission.find({ team: { _id: req.params.id } }).exec(function (
+      err,
+      missions
+    ) {
+      console.log("list of missions: ", missions);
+
+      res.render("avengers/show", { avenger, missions });
+    });
   });
 }
 

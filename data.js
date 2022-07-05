@@ -102,16 +102,25 @@ exports.missions = [
   {
     operation: "Hailing On Hydra",
     objective: "Infiltrate and Destroy Hydra Research Base",
+    supervillains: "Red Skull, Winter Soldier",
     location: "Sokovia",
   },
   {
     operation: "Ragnarok",
     objective: "Defend Asgard from Hela and her Minions",
+    supervillains: "Hela",
     location: "Asgard",
   },
   {
     operation: "Malware Removal",
     objective: "Destroy Ultron, his Sentries and production facilities",
+    supervillains: "Ultron",
     location: "Eastern Europe",
+  },
+  {
+    operation: "Alien Containment",
+    objective: "Defeat and Capture All Symbiotes",
+    supervillains: "Venom, Carnage",
+    location: "New York City",
   },
 ];

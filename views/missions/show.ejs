@@ -6,12 +6,22 @@
       <%- include('../partials/navbar') %>
       <h1>Mission Briefing</h1>
       <a href="/missions/<%= mission._id %>/edit">
-        <button>Update Mission</button>
+        <button>Edit Mission</button>
       </a>
+
+      <form
+        id="deletemission"
+        action="/missions/<%=mission._id%>/delete"
+        method="POST"
+      >
+        <button type="submit">Cancel(Delete) Mission</button>
+      </form>
 
       <h2>Operation: <span><%= mission.operation%></span></h2>
       <br />
       <h2>Objective: <span><%= mission.objective%></span></h2>
+      <br />
+      <h2>Supervillains: <span><%= mission.supervillains%></span></h2>
       <br />
       <h2>Location: <span><%= mission.location%></span></h2>
       <br />

@@ -33,15 +33,16 @@
               <% }; %>
             </ul>
           </div>
-          <div class="ultimate">
-            <h2>Ultimate Move</h2>
-            <h3>Nothing atm</h3>
-          </div>
+
           <div class="mission">
-            <h2>Missions Executed</h2>
+            <h2>Missions Assigned</h2>
             <ul class="missionlist">
-              <li>Mission 1</li>
-              <li>Mission 2</li>
+              <% missions.forEach( function (mission) { %>
+              <li>
+                <a href="/missions/<%=mission._id%>"><%=mission.operation%></a>
+              </li>
+
+              <% }) %>
             </ul>
           </div>
         </div>
