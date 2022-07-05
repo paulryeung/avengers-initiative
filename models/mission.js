@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const missionSchema = new Schema({
-  codename: String,
+  operation: String,
   objective: String,
   location: String,
   team: [{ type: SchemaTypes.ObjectId, ref: "Avengers" }],

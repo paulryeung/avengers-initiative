@@ -6,14 +6,15 @@
       <%- include('../partials/navbar') %>
       <h1>Mission Dispatch</h1>
       <form id="mission-dispatch" action="/missions/new" method="POST">
-        <label>Codename: </label>
-        <input type="text" name="codename" /><br />
+        <label>Operation Name: </label>
+        <input type="text" name="operation" /><br />
         <label>Objective</label>
         <input type="text" name="objective" /><br />
         <label>Location</label>
         <input type="text" name="location" /><br />
         <label>Available Avengers: </label>
-        <label>Team: </label>
+        <label>Team: </label> <br />
+        <button type="submit">Dispatch Avengers</button>
       </form>
     </div>
   </body>

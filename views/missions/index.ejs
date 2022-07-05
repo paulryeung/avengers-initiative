@@ -5,6 +5,36 @@
     <div class="container">
       <%- include('../partials/navbar') %>
       <h1>List of Missions</h1>
+
+      <table id="missionlist">
+        <thead>
+          <tr>
+            <th>Operation</th>
+            <th>Team</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% missions.forEach(function (m) { %>
+          <tr>
+            <td>
+              <a href="/missions/<%=m._id%>"><%= m.operation %></a>
+            </td>
+            <td>Empty for now</td>
+            <td>
+              <form
+                id="deletemission"
+                action="/avengers/<%=m._id%>/delete"
+                method="POST"
+              >
+                <button type="submit">Delete</button>
+              </form>
+            </td>
+          </tr>
+
+          <% }); %>
+        </tbody>
+      </table>
     </div>
   </body>
 </html>

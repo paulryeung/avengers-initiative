@@ -9,4 +9,7 @@ router.get("/", missionsCtrl.index);
 //Form to add new Mission
 router.get("/new", missionsCtrl.new);
 
+//post mission form information
+router.post("/new", missionsCtrl.add);
+
 module.exports = router;
