@@ -6,48 +6,57 @@
       <%- include('../partials/backgroundleft') %>
       <div class="middle-div">
         <%- include('../partials/navbar') %>
-        <div class="avengers-roster">
-          <h1 class="page-title">Avengers Roster</h1>
+        <div class="middle-background">
+          <!--add image source later for background-->
 
-          <table class="avengers-table">
-            <thead>
-              <tr>
-                <th class="icon-col">Icon</th>
-                <th class="avenger-col">Avenger</th>
-                <th class="icon-col">Delete</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% avengers.forEach(function (a) { %>
-              <tr>
-                <td>
-                  <a href="/avengers/<%=a._id%>">
-                    <img
-                      class="icon"
-                      src="<%= a.icon %>"
-                      onerror="if (this.src != '/images/No-Icon.png') this.src = '/images/No-Icon.png';"
-                    />
-                  </a>
-                </td>
-                <td>
-                  <a href="/avengers/<%=a._id%>"> <%= a.alias %> </a>
-                </td>
-                <td>
-                  <form
-                    id="deleteavenger"
-                    action="/avengers/<%=a._id%>/delete"
-                    method="POST"
-                  >
-                    <button type="submit">Delete</button>
-                  </form>
-                </td>
-              </tr>
+          <div class="avengers-roster">
+            <h1 class="page-title">Avengers Roster</h1>
 
-              <% }); %>
-            </tbody>
-          </table>
-          <br />
-          <a href="/avengers/new">Recruit Avenger</a>
+            <table class="avengers-table">
+              <thead>
+                <tr>
+                  <th class="icon-col">Icon</th>
+                  <th class="avenger-col">Avenger</th>
+                  <th class="icon-col">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% avengers.forEach(function (a) { %>
+                <tr>
+                  <td>
+                    <a href="/avengers/<%=a._id%>">
+                      <img
+                        class="icon"
+                        src="<%= a.icon %>"
+                        onerror="if (this.src != '/images/No-Icon.png') this.src = '/images/No-Icon.png';"
+                      />
+                    </a>
+                  </td>
+                  <td>
+                    <a href="/avengers/<%=a._id%>"> <%= a.alias %> </a>
+                  </td>
+                  <td>
+                    <form
+                      id="deleteavenger"
+                      action="/avengers/<%=a._id%>/delete"
+                      method="POST"
+                    >
+                      <input
+                        type="image"
+                        alt="submit"
+                        class="delete-icon"
+                        src="/images/snap_transparent.png"
+                      />
+                    </form>
+                  </td>
+                </tr>
+
+                <% }); %>
+              </tbody>
+            </table>
+            <br />
+            <a href="/avengers/new">Recruit Avenger</a>
+          </div>
         </div>
       </div>
       <%- include('../partials/backgroundright') %>
