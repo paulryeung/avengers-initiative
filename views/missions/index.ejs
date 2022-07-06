@@ -3,53 +3,61 @@
   <%- include('../partials/header') %>
   <body>
     <div class="container">
-      <%- include('../partials/navbar') %>
-      <h1>List of Missions</h1>
+      <%- include('../partials/backgroundleft') %>
+      <div class="middle-div">
+        <%- include('../partials/navbar') %>
+        <div class="middle-background">
+          <!--add image source later for background-->
+          <div class="mission-board">
+            <h1 class="page-title">Mission Board</h1>
 
-      <table id="missionlist">
-        <thead>
-          <tr>
-            <th>Operation</th>
-            <th>Current Team Assignment</th>
-            <th>Cancel Mission</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% missions.forEach(function (m) { %>
-          <tr>
-            <td>
-              <a href="/missions/<%=m._id%>"><%= m.operation %></a>
-            </td>
-            <td>
-              <!--Display all team member icons in row-->
-              <div class="current-team">
-                <% m.team.forEach(function (member) { %>
+            <table id="missionlist">
+              <thead>
+                <tr>
+                  <th class="operation-col">Operation</th>
+                  <th class="team-col">Team Assignment</th>
+                  <th class="cancel-col">Cancel</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% missions.forEach(function (m) { %>
+                <tr>
+                  <td class="missionCell">
+                    <a href="/missions/<%=m._id%>"><%= m.operation %></a>
+                  </td>
+                  <td class="missionCell">
+                    <!--Display all team member icons in row-->
 
-                <img
-                  class="team-icon"
-                  src="<%=member.icon%>"
-                  onerror="if (this.src != '/images/No-Icon.png') this.src = '/images/No-Icon.png';"
-                />
+                    <% m.team.forEach(function (member) { %>
+
+                    <img
+                      class="team-icon"
+                      src="<%=member.icon%>"
+                      onerror="if (this.src != '/images/No-Icon.png') this.src = '/images/No-Icon.png';"
+                    />
+
+                    <% }); %>
+                  </td>
+                  <td class="missionCell">
+                    <form
+                      id="deletemission"
+                      action="/missions/<%=m._id%>/delete"
+                      method="POST"
+                    >
+                      <button type="submit">Cancel</button>
+                    </form>
+                  </td>
+                </tr>
 
                 <% }); %>
-              </div>
-            </td>
-            <td>
-              <form
-                id="deletemission"
-                action="/missions/<%=m._id%>/delete"
-                method="POST"
-              >
-                <button type="submit">Delete</button>
-              </form>
-            </td>
-          </tr>
-
-          <% }); %>
-        </tbody>
-      </table>
-      <br />
-      <a href="/missions/new">Assign New Mission</a>
+              </tbody>
+            </table>
+            <br />
+            <a href="/missions/new">Assign New Mission</a>
+          </div>
+        </div>
+      </div>
+      <%- include('../partials/backgroundright') %>
     </div>
   </body>
 </html>

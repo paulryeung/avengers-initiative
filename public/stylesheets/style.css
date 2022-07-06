@@ -301,24 +301,50 @@ textarea {
 #submit-recruitform,
 #submit-editform,
 #submit-missionform,
-#submit-editmissionform,
-#backto-editmissionform {
+#submit-editmissionform {
   margin-bottom: 20px;
 }
 
 /*MISSIONS INDEX STYLING HERE*/
 
 .team-icon {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
+  width: 60px;
+  height: 60px;
 }
 
+.mission-board {
+  width: 750px;
+  border-radius: 5px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #a0abb3;
+}
+
+table#missionlist {
+  width: 90%;
+}
+
+th.operation-col {
+  width: 30%;
+}
+th.team-col {
+  width: 65%;
+}
+th.cancel-col {
+  width: 5%;
+}
+
+td.missionCell {
+  height: 75px;
+}
 /*MISSIONS SHOW PAGE STYLING HERE*/
 
 .current-team {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .add-delete-icon {
