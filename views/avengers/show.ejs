@@ -3,8 +3,10 @@
   <%- include('../partials/header') %>
   <body>
     <div class="container">
-      <%- include('../partials/navbar') %>
-      <div class="content">
+      <%- include('../partials/backgroundleft') %>
+
+      <div class="middle-div">
+        <%-include('../partials/navbar') %>
         <div class="profile-header">
           <div class="model-div">
             <img
@@ -20,11 +22,15 @@
                 src="<%=avenger.photo%>"
                 onerror="if (this.src != '/images/No-Image.png') this.src = '/images/No-Image.png';"
               />
-              <a href="/avengers/<%=avenger._id%>/edit">Update Profile</a>
+              <a class="update-profile" href="/avengers/<%=avenger._id%>/edit"
+                >Update Profile</a
+              >
             </div>
             <div class="identity-names">
-              <h2>Alias: <%=avenger.alias%></h2>
-              <h2>Identity: <%=avenger.identity%></h2>
+              <h2>Alias: <span class="span-name"><%=avenger.alias%></span></h2>
+              <h2>
+                Identity: <span class="span-name"><%=avenger.identity%></span>
+              </h2>
               <div class="description">
                 <h2>Description:</h2>
                 <p><%= avenger.description%></p>
@@ -40,21 +46,22 @@
             </div>
           </div>
         </div>
-        <div class="profile-body">
-          <div class="mission">
-            <h2>Missions Assigned</h2>
-            <ul class="missionlist">
-              <% missions.forEach( function (mission) { %>
-              <li>
-                <a href="/missions/<%=mission._id%>"><%=mission.operation%></a>
-              </li>
 
-              <% }) %>
-            </ul>
-          </div>
+        <div class="mission">
+          <h2>Missions Assigned</h2>
+          <ul class="missionlist">
+            <% missions.forEach( function (mission) { %>
+            <li>
+              <a href="/missions/<%=mission._id%>"><%=mission.operation%></a>
+            </li>
+
+            <% }) %>
+          </ul>
+          <a class="goback" href="/avengers">Back to All Avengers</a>
         </div>
       </div>
-      <a href="/avengers">Back to All Avengers</a>
+
+      <%- include('../partials/backgroundright') %>
     </div>
   </body>
 </html>

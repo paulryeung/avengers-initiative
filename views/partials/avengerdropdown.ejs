@@ -1,39 +1,49 @@
-<form
-  id="add-avenger-to-mission"
-  action="/missions/<%=mission._id%>/avengers"
-  method="POST"
->
-  <select name="avengerId">
-    <%- avengers.map (a => `
-    <option value="${a._id}">${a.alias}</option>
-    `).join('') %>
-  </select>
-  <button type="submit">Assign Avenger</button>
-</form>
+<!--to copy code snippets-->
+<%- include('../partials/backgroundleft') %>
+<!---->
+<div class="middle-div">
+  <!---->
+  <%- include('../partials/backgroundright') %>
 
-<!--Collection of Former Abilities ul, stick this under Abilities in avengers show page-->
-<ul class="ul-abilities">
-  <% for (let i=0; i< avenger.abilities.length; i++) { %>
-  <li><%=avenger.abilities[i]%></li>
-  <% }; %>
-</ul>
+  <!---->
+  <!---->
+  <form
+    id="add-avenger-to-mission"
+    action="/missions/<%=mission._id%>/avengers"
+    method="POST"
+  >
+    <select name="avengerId">
+      <%- avengers.map (a => `
+      <option value="${a._id}">${a.alias}</option>
+      `).join('') %>
+    </select>
+    <button type="submit">Assign Avenger</button>
+  </form>
 
-<% let counter = 1; %>
-<label>Abilities (Edit Up to 4)</label>
-<div class="abilities-div">
-  <% avenger.abilities.forEach( function (ability){ %>
-  <label>Ability <%=counter%></label>
-  <input
-    id="input-ability-<%=counter%>"
-    type="text"
-    name="ability<%=counter%>"
-    value="<%=ability%>"
-  /><br />
-  <% counter++; %> <% }); %>
-  <!--now add a remaining input texts and set to values empty-->
-  <% for (let i=counter; i<4; i++) { %>
-  <label>Ability <%=counter%></label>
-  <input id="input-ability-<%=i%>" type="text" name="ability<%=i%>" />
-  <br />
-  <% }; %>
+  <!--Collection of Former Abilities ul, stick this under Abilities in avengers show page-->
+  <ul class="ul-abilities">
+    <% for (let i=0; i< avenger.abilities.length; i++) { %>
+    <li><%=avenger.abilities[i]%></li>
+    <% }; %>
+  </ul>
+
+  <% let counter = 1; %>
+  <label>Abilities (Edit Up to 4)</label>
+  <div class="abilities-div">
+    <% avenger.abilities.forEach( function (ability){ %>
+    <label>Ability <%=counter%></label>
+    <input
+      id="input-ability-<%=counter%>"
+      type="text"
+      name="ability<%=counter%>"
+      value="<%=ability%>"
+    /><br />
+    <% counter++; %> <% }); %>
+    <!--now add a remaining input texts and set to values empty-->
+    <% for (let i=counter; i<4; i++) { %>
+    <label>Ability <%=counter%></label>
+    <input id="input-ability-<%=i%>" type="text" name="ability<%=i%>" />
+    <br />
+    <% }; %>
+  </div>
 </div>
