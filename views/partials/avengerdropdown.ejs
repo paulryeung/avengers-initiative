@@ -17,3 +17,23 @@
   <li><%=avenger.abilities[i]%></li>
   <% }; %>
 </ul>
+
+<% let counter = 1; %>
+<label>Abilities (Edit Up to 4)</label>
+<div class="abilities-div">
+  <% avenger.abilities.forEach( function (ability){ %>
+  <label>Ability <%=counter%></label>
+  <input
+    id="input-ability-<%=counter%>"
+    type="text"
+    name="ability<%=counter%>"
+    value="<%=ability%>"
+  /><br />
+  <% counter++; %> <% }); %>
+  <!--now add a remaining input texts and set to values empty-->
+  <% for (let i=counter; i<4; i++) { %>
+  <label>Ability <%=counter%></label>
+  <input id="input-ability-<%=i%>" type="text" name="ability<%=i%>" />
+  <br />
+  <% }; %>
+</div>
