@@ -3,21 +3,32 @@
   <%- include('../partials/header') %>
   <body>
     <div class="container">
-      <%- include('../partials/navbar') %>
-      <h1>Mission Dispatch</h1>
-      <form id="mission-dispatch" action="/missions/new" method="POST">
-        <label>Operation Name: </label>
-        <input type="text" name="operation" /><br />
-        <label>Objective</label>
-        <input type="text" name="objective" /><br />
-        <label>Supervillains</label>
-        <input type="text" name="supervillains" /><br />
-        <label>Location</label>
-        <input type="text" name="location" /><br />
-        <label>Available Avengers: </label>
-        <label>Team: </label> <br />
-        <button type="submit">Post Mission</button>
-      </form>
+      <%- include('../partials/backgroundleft') %>
+      <div class="middle-div">
+        <%- include('../partials/navbar') %>
+        <div class="middle-background">
+          <div class="avengers-application">
+            <h1>Mission Dispatch</h1>
+            <form id="mission-dispatch" action="/missions/new" method="POST">
+              <div class="content-form">
+                <label>Operation Name: </label>
+                <input type="text" name="operation" /><br />
+                <label>Objective</label>
+                <input type="text" name="objective" /><br />
+                <label>Supervillains</label>
+                <input type="text" name="supervillains" /><br />
+                <label>Location</label>
+                <input type="text" name="location" /><br />
+
+                <button id="submit-missionform" type="submit">
+                  Post Mission
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <%- include('../partials/backgroundright') %>
     </div>
   </body>
 </html>

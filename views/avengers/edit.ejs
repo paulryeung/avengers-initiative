@@ -3,68 +3,89 @@
   <%- include('../partials/header') %>
   <body>
     <div class="container">
-      <%- include('../partials/navbar') %>
-      <form
-        id="avengers-recruitment"
-        action="/avengers/<%=avenger._id%>?_method=PUT"
-        method="POST"
-      >
-        <label>Alias</label>
-        <input type="text" name="alias" value="<%=avenger.alias%>" /><br />
-        <label>Identity</label>
-        <input
-          type="text"
-          name="identity"
-          value="<%=avenger.identity%>"
-        /><br />
-        <label>Description</label>
-        <input
-          type="text"
-          name="description"
-          value="<%=avenger.description%>"
-        /><br />
-        <label>Icon (Link To Image)</label>
-        <input type="text" name="icon" value="<%=avenger.icon%>" /><br />
-        <label>Hero Portrait (Link To Image)</label>
-        <input type="text" name="model" value="<%=avenger.model%>" /><br />
-        <label>Photo ID (Link To Image)</label>
-        <input type="text" name="photo" value="<%=avenger.photo%>" /><br />
+      <%- include('../partials/backgroundleft') %>
+      <div class="middle-div">
+        <%- include('../partials/navbar') %>
+        <div class="middle-background">
+          <form
+            id="avengers-recruitment"
+            action="/avengers/<%=avenger._id%>?_method=PUT"
+            method="POST"
+          >
+          <div class="avengers-application">
+            <h1 class="page-title">Avengers Update</h1>
+            <div class="form-header">
+              <div class="form-header-left">
+                <img class="pointing" src="<%=avenger.photo%>" />
+                <h2>Update Me!</h2>
+              </div>
+              <div class="form-header-right">
+                <label>Alias</label>
+                <input type="text" name="alias" value="<%=avenger.alias%>"/><br />
+                <label>Identity</label>
+                <input type="text" name="identity" value="<%=avenger.identity%>"/><br />
+                <label>Description</label><br>
+                <textarea type="text" name="description" /><%=avenger.description%></textarea>
+                              
+              </div>            
+            </div>
+            <div class="content-form">       
+              <label>Icon (URL)</label><br>
+              <input
+                type="text"
+                name="icon"
+                value="<%=avenger.icon%>"
+              /><br />
+              <label>Hero Portrait (URL)</label><br>
+              <input
+                type="text"
+                name="model"
+                value="<%=avenger.model%>"
+              /><br />
+              <label>Photo ID (URL)</label><br>
+              <input
+                type="text"
+                name="photo"
+                value="<%=avenger.photo%>"
+              /><br />            
+              <label>Ability 1</label>
+              <input
+                id="input-ability-1"
+                type="text"
+                name="ability1"
+                value="<%=avenger.abilities[0]%>"
+              /><br />
+              <label>Ability 2</label>
+              <input
+                id="input-ability-2"
+                type="text"
+                name="ability2"
+                value="<%=avenger.abilities[1]%>"
+              /><br />
+              <label>Ability 3</label>
+              <input
+                id="input-ability-3"
+                type="text"
+                name="ability3"
+                value="<%=avenger.abilities[2]%>"
+              /><br />
+              <label>Ability 4</label>
+              <input
+                id="input-ability-4"
+                type="text"
+                name="ability4"
+                value="<%=avenger.abilities[3]%>"
+              /><br />
 
-        <% let counter = 1; %>
-        <label>Abilities (Edit Up to 4)</label>
-        <div class="abilities-div">
-          <label>Ability 1</label>
-          <input
-            id="input-ability-1"
-            type="text"
-            name="ability1"
-            value="<%=avenger.abilities[0]%>"
-          /><br />
-          <label>Ability 2</label>
-          <input
-            id="input-ability-2"
-            type="text"
-            name="ability2"
-            value="<%=avenger.abilities[1]%>"
-          /><br />
-          <label>Ability 3</label>
-          <input
-            id="input-ability-3"
-            type="text"
-            name="ability3"
-            value="<%=avenger.abilities[2]%>"
-          /><br />
-          <label>Ability 4</label>
-          <input
-            id="input-ability-4"
-            type="text"
-            name="ability4"
-            value="<%=avenger.abilities[3]%>"
-          /><br />
+              <button id="submit-editform" type="Update Profile">Submit Application</button>
+            </div>
+
+            
+          </div>
+          </form>
         </div>
-
-        <button type="Update Profile">Submit Application</button>
-      </form>
+      </div>
+      <%- include('../partials/backgroundright') %>
     </div>
   </body>
 </html>
