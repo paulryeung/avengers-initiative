@@ -18,11 +18,34 @@ function newAvenger(req, res) {
 function add(req, res) {
   console.log("Here are form parameters", req.body);
 
-  //seperate abilities by comma into array elements
-  req.body.abilities = req.body.abilities.split(",");
-  console.log("Here are form parameters after split", req.body);
+  let abilities = [];
+  //check and add if parameter isn't null
+  if (req.body.ability1) {
+    abilities.push(req.body.ability1);
+  }
+  if (req.body.ability2) {
+    abilities.push(req.body.ability2);
+  }
+  if (req.body.ability3) {
+    abilities.push(req.body.ability3);
+  }
+  if (req.body.ability4) {
+    abilities.push(req.body.ability4);
+  }
 
-  let newAvenger = Avenger(req.body);
+  let newParameters = {
+    alias: req.body.alias,
+    identity: req.body.identity,
+    description: req.body.description,
+    icon: req.body.icon,
+    model: req.body.model,
+    photo: req.body.photo,
+    abilities: abilities,
+  };
+
+  console.log("Here are abilities parameter after congregation", abilities);
+
+  let newAvenger = Avenger(newParameters);
   newAvenger.save(function (err) {
     if (err) {
       console.log(err);

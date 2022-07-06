@@ -4,25 +4,30 @@
   <body>
     <div class="container">
       <%- include('../partials/navbar') %>
-      <form id="avengers-recruitment" action="/avengers/new" method="POST">
-        <label>Alias</label>
-        <input type="text" name="alias" /><br />
-        <label>Identity</label>
-        <input type="text" name="identity" /><br />
-        <label>Description</label>
-        <input type="text" name="description" /><br />
-        <label>Icon (Link To Image)</label>
-        <input type="text" name="icon" value="No Image Available" /><br />
-        <label>Hero Portrait (Link To Image)</label>
-        <input type="text" name="model" value="No Image Available" /><br />
-        <label>Photo ID (Link To Image)</label>
-        <input type="text" name="photo" value="No Photo Available" /><br />
-        <label>Abilities (Comma Seperated)</label>
-        <input type="text" name="abilities" /><br />
-        <label>Ultimate Move (form coming soon)</label>
-
-        <button type="submit">Submit Application</button>
-      </form>
+      <div class="content-form">
+        <form id="avengers-recruitment" action="/avengers/new" method="POST">
+          <label>Alias</label>
+          <input type="text" name="alias" /><br />
+          <label>Identity</label>
+          <input type="text" name="identity" /><br />
+          <label>Description</label>
+          <input type="text" name="description" /><br />
+          <label>Icon (Link To Image)</label>
+          <input type="text" name="icon" value="No Image Available" /><br />
+          <label>Hero Portrait (Link To Image)</label>
+          <input type="text" name="model" value="No Image Available" /><br />
+          <label>Photo ID (Link To Image)</label>
+          <input type="text" name="photo" value="No Photo Available" /><br />
+          <label>Abilities (Add Up to 4)</label>
+          <button id="add-ability" type="button">Add Another Ability</button
+          ><br />
+          <div class="abilities-div">
+            <label>Ability 1</label>
+            <input id="input-ability-1" type="text" name="ability1" /><br />
+          </div>
+          <button type="submit">Submit Application</button><br />
+        </form>
+      </div>
     </div>
   </body>
 </html>
