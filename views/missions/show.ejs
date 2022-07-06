@@ -6,69 +6,80 @@
       <%- include('../partials/backgroundleft') %>
       <div class="middle-div">
         <%- include('../partials/navbar') %>
-        <h1>Mission Briefing</h1>
-        <a href="/missions/<%= mission._id %>/edit">
-          <button>Edit Mission</button>
-        </a>
+        <div class="mission-header">
+          <div class="mission-header-left">
+            <h1>Mission Briefing</h1>
 
-        <form
-          id="deletemission"
-          action="/missions/<%=mission._id%>/delete"
-          method="POST"
-        >
-          <button type="submit">Cancel(Delete) Mission</button>
-        </form>
+            <div class="buttons-wrapper">
+              <a href="/missions/<%= mission._id %>/edit">
+                <button>Edit Mission</button>
+              </a>
 
-        <h2>Operation: <span><%= mission.operation%></span></h2>
-        <br />
-        <h2>Objective: <span><%= mission.objective%></span></h2>
-        <br />
-        <h2>Supervillains: <span><%= mission.supervillains%></span></h2>
-        <br />
-        <h2>Location: <span><%= mission.location%></span></h2>
-        <br />
-        <br />
-        <h2>Available Avengers</h2>
+              <form
+                id="deletemission"
+                action="/missions/<%=mission._id%>/delete"
+                method="POST"
+              >
+                <button type="submit">Cancel(Delete) Mission</button>
+              </form>
+            </div>
+          </div>
+          <div class="mission-header-right">
+            <img id="mission-icon" src="/images/avengers_icon.jpg" />
+          </div>
+          <h2>Operation: <span><%= mission.operation%></span></h2>
+          <br />
+          <h2>Objective: <span><%= mission.objective%></span></h2>
+          <br />
+          <h2>Supervillains: <span><%= mission.supervillains%></span></h2>
+          <br />
+          <h2>Location: <span><%= mission.location%></span></h2>
+          <br />
+          <br />
 
-        <div class="available-avengers">
-          <!--adding avengers to cast-->
-          <% avengers.forEach(function (member) { %>
-          <form
-            id="add-avenger-to-mission"
-            action="/missions/<%=mission._id%>/avengers/<%=member._id%>"
-            method="POST"
-          >
-            <input
-              type="image"
-              class="add-delete-icon"
-              alt="submit"
-              src="<%=member.icon%>"
-            />
-          </form>
+          <h2>Available Avengers</h2>
 
-          <% }); %>
+          <div class="available-avengers">
+            <!--adding avengers to cast-->
+            <% avengers.forEach(function (member) { %>
+            <form
+              id="add-avenger-to-mission"
+              action="/missions/<%=mission._id%>/avengers/<%=member._id%>"
+              method="POST"
+            >
+              <input
+                type="image"
+                class="add-delete-icon"
+                alt="submit"
+                src="<%=member.icon%>"
+              />
+            </form>
+
+            <% }); %>
+          </div>
+          <h2>Current Team</h2>
+
+          <div class="current-team">
+            <% mission.team.forEach(function (member) { %>
+            <form
+              id="remove-avenger-from-mission"
+              action="/missions/<%=mission._id%>/avengers/<%=member._id%>?_method=DELETE"
+              method="POST"
+            >
+              <input
+                type="image"
+                class="add-delete-icon"
+                alt="submit"
+                src="<%=member.icon%>"
+              />
+            </form>
+
+            <% }); %>
+          </div>
+          <a href="/missions">Back to Mission Board</a>
         </div>
-        <h2>Current Team</h2>
-
-        <div class="current-team">
-          <% mission.team.forEach(function (member) { %>
-          <form
-            id="remove-avenger-from-mission"
-            action="/missions/<%=mission._id%>/avengers/<%=member._id%>?_method=DELETE"
-            method="POST"
-          >
-            <input
-              type="image"
-              class="add-delete-icon"
-              alt="submit"
-              src="<%=member.icon%>"
-            />
-          </form>
-
-          <% }); %>
-        </div>
-        <a href="/missions">Back to Mission Board</a>
       </div>
+      <%- include('../partials/backgroundright') %>
     </div>
   </body>
 </html>
