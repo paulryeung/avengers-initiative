@@ -217,6 +217,17 @@ img.photo {
   align-items: center;
 }
 
+.mission > h2 {
+  margin: 0;
+}
+
+.missionlist {
+  margin: 0;
+}
+
+.missionlist > li {
+  margin: 5px;
+}
 /*Recruit/Edit New Avengers Page */
 .pointing {
   width: 200px;
