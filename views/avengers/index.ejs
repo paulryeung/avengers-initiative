@@ -19,7 +19,11 @@
           <tr>
             <td>
               <a href="/avengers/<%=a._id%>">
-                <img class="icon" src="<%= a.icon %>" />
+                <img
+                  class="icon"
+                  src="<%= a.icon %>"
+                  onerror="if (this.src != '/images/No-Icon.png') this.src = '/images/No-Icon.png';"
+                />
               </a>
             </td>
             <td>

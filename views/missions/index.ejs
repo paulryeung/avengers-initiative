@@ -25,7 +25,11 @@
               <div class="current-team">
                 <% m.team.forEach(function (member) { %>
 
-                <img class="team-icon" src="<%=member.icon%>" />
+                <img
+                  class="team-icon"
+                  src="<%=member.icon%>"
+                  onerror="if (this.src != '/images/No-Icon.png') this.src = '/images/No-Icon.png';"
+                />
 
                 <% }); %>
               </div>

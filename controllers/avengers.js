@@ -98,10 +98,34 @@ function update(req, res) {
   console.log("Made it to updating avenger controller");
   console.log(req.body);
 
-  //make sure abilities is properly spliced
-  req.body.abilities = req.body.abilities.split(",");
+  let abilities = [];
+  //check and add if parameter isn't null
+  if (req.body.ability1) {
+    abilities.push(req.body.ability1);
+  }
+  if (req.body.ability2) {
+    abilities.push(req.body.ability2);
+  }
+  if (req.body.ability3) {
+    abilities.push(req.body.ability3);
+  }
+  if (req.body.ability4) {
+    abilities.push(req.body.ability4);
+  }
 
-  Avenger.updateOne({ _id: req.params.id }, req.body, function (err) {
+  let newParameters = {
+    alias: req.body.alias,
+    identity: req.body.identity,
+    description: req.body.description,
+    icon: req.body.icon,
+    model: req.body.model,
+    photo: req.body.photo,
+    abilities: abilities,
+  };
+
+  console.log("Here are abilities parameter after congregation", abilities);
+
+  Avenger.updateOne({ _id: req.params.id }, newParameters, function (err) {
     if (err) {
       console.log(err);
       console.log("Error updating avenger, redirecting to edit page again");

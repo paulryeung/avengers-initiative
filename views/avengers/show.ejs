@@ -7,11 +7,19 @@
       <div class="content">
         <div class="profile-header">
           <div class="model-div">
-            <img class="model" src="<%=avenger.model%>" />
+            <img
+              class="model"
+              src="<%=avenger.model%>"
+              onerror="if (this.src != '/images/No-Image.png') this.src = '/images/No-Image.png';"
+            />
           </div>
           <div class="identity-div">
             <div class="identity-pic">
-              <img class="photo" src="<%=avenger.photo%>" />
+              <img
+                class="photo"
+                src="<%=avenger.photo%>"
+                onerror="if (this.src != '/images/No-Image.png') this.src = '/images/No-Image.png';"
+              />
               <a href="/avengers/<%=avenger._id%>/edit">Update Profile</a>
             </div>
             <div class="identity-names">
