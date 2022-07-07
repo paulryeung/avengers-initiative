@@ -11,9 +11,19 @@
             <div class="mission-header">
               <div class="mission-header-left">
                 <h1>Mission Briefing</h1>
+                <br />
 
+                <h3 class="mission-show">Operation:</h3>
+                <h2 class="mission-show"><%= mission.operation%></h2>
+                <h3 class="mission-show">Location:</h3>
+                <h2 class="mission-show"><%= mission.location%></h2>
+                <h3 class="mission-show">Supervillains:</h3>
+                <h2 class="mission-show"><%= mission.supervillains%></h2>
+              </div>
+              <div class="mission-header-right">
+                <img id="mission-icon" src="/images/avengers_icon.jpg" />
                 <div class="buttons-wrapper">
-                  <a href="/missions/<%= mission._id %>/edit">
+                  <a id="edit-mission" href="/missions/<%= mission._id %>/edit">
                     <button>Edit Mission</button>
                   </a>
 
@@ -22,25 +32,17 @@
                     action="/missions/<%=mission._id%>/delete"
                     method="POST"
                   >
-                    <button type="submit">Cancel(Delete) Mission</button>
+                    <button type="submit">Cancel Mission</button>
                   </form>
                 </div>
               </div>
-              <div class="mission-header-right">
-                <img id="mission-icon" src="/images/avengers_icon.jpg" />
+            </div>
+            <div class="mission-content">
+              <div class="mission-objective">
+                <h3 class="mission-show">Objective:</h3>
+                <h2 id="mission-show-id"><%= mission.objective%></h2>
               </div>
-              <h2>Operation: <span><%= mission.operation%></span></h2>
-              <br />
-              <h2>Objective: <span><%= mission.objective%></span></h2>
-              <br />
-              <h2>Supervillains: <span><%= mission.supervillains%></span></h2>
-              <br />
-              <h2>Location: <span><%= mission.location%></span></h2>
-              <br />
-              <br />
-
-              <h2>Available Avengers</h2>
-
+              <h2 class="icon-teams">Available Avengers</h2>
               <div class="available-avengers">
                 <!--adding avengers to cast-->
                 <% avengers.forEach(function (member) { %>
@@ -59,7 +61,7 @@
 
                 <% }); %>
               </div>
-              <h2>Current Team</h2>
+              <h2 class="icon-teams">Current Team</h2>
 
               <div class="current-team">
                 <% mission.team.forEach(function (member) { %>

@@ -364,8 +364,8 @@ td.missionCell {
 }
 
 .add-delete-icon {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   margin: 5px;
 }
@@ -377,18 +377,84 @@ td.missionCell {
 
 div.mission-header {
   width: 100%;
-  height: 500px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: row;
 }
 
-div.buttons-wrappers {
+div.mission-header-left {
+  width: 50%;
+  margin-left: 20px;
+}
+
+div.mission-header-left > h1 {
+  font-size: 35px;
+  margin-bottom: 5px;
+}
+
+h2.mission-show {
+  margin-top: 0;
+  font-size: 30px;
+}
+
+h3.mission-show {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+div.mission-header-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.buttons-wrapper {
+  margin-top: 10px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
+a#edit-mission {
+  margin-right: 5px;
+}
+
+form#deletemission {
+  margin-left: 5px;
+}
+
 #mission-icon {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
   border-radius: 5px;
+}
+
+div.mission-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.mission-objective {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2#mission-show-id {
+  margin-top: 0;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+h2.icon-teams {
+  font-size: 20px;
+  margin-bottom: 5px;
 }
