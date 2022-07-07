@@ -46,7 +46,7 @@
                   <h3 class="mission-show">Objective:</h3>
                   <h2 id="mission-show-id"><%= mission.objective%></h2>
                 </div>
-                <h2 class="icon-teams">Available Avengers</h2>
+                <h2 class="icon-teams">Available Avengers (Click to Assign)</h2>
                 <div class="available-avengers">
                   <!--adding avengers to cast-->
                   <% avengers.forEach(function (member) { %>
@@ -65,7 +65,7 @@
 
                   <% }); %>
                 </div>
-                <h2 class="icon-teams">Current Team</h2>
+                <h2 class="icon-teams">Current Team (Click to Remove)</h2>
 
                 <div class="current-team">
                   <% mission.team.forEach(function (member) { %>
