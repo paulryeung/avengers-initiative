@@ -64,7 +64,7 @@ exports.avengers = [
     ],
   },
   {
-    alias: "Scarlett Witch",
+    alias: "Scarlet Witch",
     identity: "Wanda Maximoff",
     description:
       "Sokovia native with incredibly powerful abilities to manipulate Chaos Magic.",
