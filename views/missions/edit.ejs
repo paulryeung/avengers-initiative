@@ -3,53 +3,55 @@
   <%- include('../partials/header') %>
   <body>
     <div class="container">
-      <%- include('../partials/backgroundleft') %>
-      <div class="middle-div">
-        <%- include('../partials/navbar') %>
-        <div class="middle-background">
-          <div class="avengers-application">
-            <h1>Mission Dispatch</h1>
-            <form
-              id="mission-edit"
-              action="/missions/<%=mission._id%>?_method=PUT"
-              method="POST"
-            >
-              <div class="content-form">
-                <label>Operation Name: </label>
-                <input
-                  type="text"
-                  name="operation"
-                  value="<%=mission.operation%>"
-                /><br />
-                <label>Objective</label>
-                <input
-                  type="text"
-                  name="objective"
-                  value="<%=mission.objective%>"
-                /><br />
-                <label>Supervillains</label>
-                <input
-                  type="text"
-                  name="supervillains"
-                  value="<%=mission.supervillains%>"
-                /><br />
-                <label>Location</label>
-                <input
-                  type="text"
-                  name="location"
-                  value="<%=mission.location%>"
-                /><br />
+      <div class="all-content">
+        <%- include('../partials/backgroundleft') %>
+        <div class="middle-div">
+          <%- include('../partials/navbar') %>
+          <div class="middle-background">
+            <div class="avengers-application">
+              <h1>Mission Dispatch</h1>
+              <form
+                id="mission-edit"
+                action="/missions/<%=mission._id%>?_method=PUT"
+                method="POST"
+              >
+                <div class="content-form">
+                  <label>Operation Name: </label>
+                  <input
+                    type="text"
+                    name="operation"
+                    value="<%=mission.operation%>"
+                  /><br />
+                  <label>Objective</label>
+                  <input
+                    type="text"
+                    name="objective"
+                    value="<%=mission.objective%>"
+                  /><br />
+                  <label>Supervillains</label>
+                  <input
+                    type="text"
+                    name="supervillains"
+                    value="<%=mission.supervillains%>"
+                  /><br />
+                  <label>Location</label>
+                  <input
+                    type="text"
+                    name="location"
+                    value="<%=mission.location%>"
+                  /><br />
 
-                <button id="submit-editmissionform" type="submit">
-                  Update Mission
-                </button>
-              </div>
-            </form>
+                  <button id="submit-editmissionform" type="submit">
+                    Update Mission
+                  </button>
+                </div>
+              </form>
+            </div>
+            <a href="/missions/<%=mission._id%>"> Back To Mission Briefing </a>
           </div>
-          <a href="/missions/<%=mission._id%>"> Back To Mission Briefing </a>
         </div>
+        <%- include('../partials/backgroundright') %>
       </div>
-      <%- include('../partials/backgroundright') %>
     </div>
   </body>
 </html>
