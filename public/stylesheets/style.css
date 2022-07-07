@@ -70,6 +70,18 @@ div.welcome > h1 {
   -webkit-text-stroke-color: white;
 }
 
+#enter {
+  font-size: 30px;
+  color: white;
+  margin-top: 50px;
+  font-style: italic;
+  background-color: #2e3560;
+
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
 /* Navigation Bar Styling here*/
 .navbar {
   height: 60px;
