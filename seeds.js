@@ -1,6 +1,7 @@
 //Reference material under "promises",W05, D2, Instructors, Mongoose Movies
 
 //intialize database with a bunch of avengers
+require("dotenv").config();
 require("./config/database");
 const Avenger = require("./models/avenger");
 const Mission = require("./models/mission");

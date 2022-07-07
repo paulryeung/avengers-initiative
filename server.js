@@ -4,6 +4,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
+require("dotenv").config();
 require("./config/database");
 
 var indexRouter = require("./routes/index");
@@ -13,6 +14,7 @@ const missionsRouter = require("./routes/missions");
 
 //add method override
 const methodOverride = require("method-override");
+const { domainToASCII } = require("url");
 
 var app = express();
 

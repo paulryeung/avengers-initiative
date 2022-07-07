@@ -1,6 +1,11 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/avengers", {
+//mongodb://127.0.0.1:27017/avengers
+
+//in heroku you use "heroku config set: KEY=VALUE"
+//so heroku config:set DATABASE_URL=asdfasdfasdf     NOTE THERE IS NO SPACE BETWEEN config: set!!!
+
+mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   UseUnifiedTopology: true,
 });
