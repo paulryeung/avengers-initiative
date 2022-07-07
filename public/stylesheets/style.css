@@ -25,6 +25,12 @@ img {
   object-fit: cover;
 }
 
+#avengers-init-logo {
+  height: 55px;
+  width: auto;
+  object-fit: cover;
+}
+
 /* Navigation Bar Styling here*/
 .navbar {
   height: 60px;
@@ -355,6 +361,30 @@ td.missionCell {
   font-size: 20px;
   margin-bottom: 5px;
 }
+
+/*MISSIONS NEW PAGE STYLING HERE*/
+div.mission-dispatch-content {
+  width: 100%;
+}
+
+div.mission-dispatch-content > label {
+  font-size: 20px;
+}
+
+div.mission-dispatch-content > input {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+#nickfury-icon {
+  width: 380px;
+  height: 380px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
 /*MISSIONS SHOW PAGE STYLING HERE*/
 
 .current-team {
