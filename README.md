@@ -14,11 +14,13 @@ An online database for the Avengers Initiative, includes the roster of Avengers 
 - Trello board (https://trello.com/b/DA5lMEp4/project-2-user-stories)
 
 ## Screenshots!
+![homepage](https://user-images.githubusercontent.com/105737940/177878372-a143bf26-68d5-41e3-a433-2d6e2decefa3.png)
 
-![homepage](https://user-images.githubusercontent.com/105737940/177877881-4eecd5bd-3add-4797-9fb9-f3adbb47ac0e.png)
+
 ![avenger_roster](https://user-images.githubusercontent.com/105737940/177877913-a9d1d82d-d688-469f-afa9-9b0a1bc22706.png)
-![avenger_profile](https://user-images.githubusercontent.com/105737940/177877922-aa647a11-3f26-438a-8b91-72167618f463.png)
 
+
+![avenger_profile](https://user-images.githubusercontent.com/105737940/177878378-05619ae4-29f1-4c6a-99b7-242e76474021.png)
 
 ### Technologies Used and Dependencies
 
